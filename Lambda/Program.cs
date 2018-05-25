@@ -22,6 +22,7 @@ namespace Lambda
             for(int i = 0;i<items.Length;i++)
             {
                 System.Console.WriteLine(items[i]);
+                System.Console.Write("测试");
             }
         }
 
