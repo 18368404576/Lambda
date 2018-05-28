@@ -19,14 +19,20 @@ namespace Lambda
                 items[i] = int.Parse(System.Console.ReadLine());
             }
             Bubblesort(items, GreaterThan);
-            for(int i = 0;i<items.Length;i++)
+
+            Bubblesort(items,
+                (int First, int Second) =>
+            {
+                return First < Second;
+            });
+
+            for (int i = 0;i<items.Length;i++)
             {
                 System.Console.WriteLine(items[i]);
-                System.Console.Write("测试");
             }
         }
 
-        public static void Bubblesort(int[] items,ComparisonHandler comparisonMethod)
+        public static void Bubblesort(int[] items, ComparisonHandler comparisonMethod)
         {
             int temp;
 
@@ -54,6 +60,7 @@ namespace Lambda
             }
            
         }
+
 
         public static bool GreaterThan(int First, int Second)
         {
